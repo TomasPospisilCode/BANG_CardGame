@@ -1,13 +1,22 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # This class represents instance of game
+
 from Player_module import Player
 from random import shuffle
+
+
 class Game:
     def __init__(self, player_count):
         self.player_list = []
         self.current_game_role_deck = []
+        # Entered value has to be integer
+        if type(player_count) is not type(int):
+            raise ValueError('Player count has to be integer')
         # Minimum count of player is 4 and maximum is 7, so if it's less or more, exception is thrown
         if player_count < 4 or player_count > 7:
-            raise ValueError
+            raise ValueError('Incorrect range of player_count')
+
         self.playerCount = player_count
 
         # Add every player to player list

@@ -1,5 +1,5 @@
-#!/usr/bin/python
-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # Object of this class represents one card
 # Every card has suite and color
 import copy
@@ -25,6 +25,7 @@ def main():
     # Show role of every player
     for player in game.player_list:
         player.show_role()
+
 
 
 if __name__ == '__main__':

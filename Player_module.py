@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # This class represents player
 class Player:
     def __init__(self, number):
