@@ -37,3 +37,49 @@ class RoleDeck(Deck):
     def show(self):
         for card in self.list_of_roles:
             card.show()
+
+
+class CharactersDeck(Deck):
+    bart_cassidy = ("Bart Cassidy", 4, "Ztratí-li život, lízne si kartu z balíčku")
+    black_jack = ("Black Jack", 4, "Během první fáze svého tahu ukáže druhou kartu, kterou si líznul: je-li tato "
+                                   "karta srdcová či kárová (červené barvy), lízne si ještě jednu kartu navíc(již "
+                                   "opět skrytě)")
+    calamity_janet = ("Calamity Janet", 4, "Může používat karty BANG! jako karty Vedle! a naopak. Zahraje-li kartu "
+                                           "Vedle! jako BANG!(jako normální výstřel), nemůže zahrát další BANG!(tedy, "
+                                           "pokud nemá ve hře Volcanic. Tuto schopnost může využívat při Duelu, "
+                                           "Indiánech apod.)")
+    el_gringo = ("El Gringo", 3, "Lízne si náhodně kartu z ruky hráče, který mu způsobí ztrátu života (za každý "
+                                 "ztracený život jednu). Nemá-li protivník žádnou kartu v ruce, nic se neděje, "
+                                 "Pozor na to, že zranění od Dynamitu není způsobeno hráčem, který dynamit vyložil. "
+                                 "Pokud El Gringo ztratí život poté, co sám zahrál Duel, kartu si nedobírá")
+    jesse_jones = ("Jesse Jones", 4, "Během první fáze svého tahu si může vybrat, jestli si lízne první kartu z "
+                                     "balíčku nebo z ruky libovolného hráče. Druhou kartu si vždy líže z balíčku")
+    jourdonnais = ("Jourdonnais", 4, "Má vlastně neustále ve hře fiktivní kartu Barel. Pokud se tedy brání proti "
+                                     "výstřelu BANG!, vytáhne si náhodnou kartu z balíčku. Pokud je tato srdcová, "
+                                     "střele se vyhnul a neztrácí život. Pokud má Jourddonais ve hře zahranou kartu "
+                                     "Barel, může otáčet při útoku BANGem! dvě karty (Za každý barel jednu)")
+    kit_carlson = ("Kit Carlson", 4, "Během první fáze svého kola se podívá na vrchní tři karty balíčku, vybere si z "
+                                     "nich 2, které si nechá, a třetí vrátí zpět na vrchol balíčku")
+    lucky_duke = ("Lucky Duke", 4, "Vždy, když si má líznout!(např. u karet Vězení, Dynamit), otočí si vrchní 2 karty "
+                                   "balíčku a vybere si, která se mu hodí. Obě karty jsou následně odhozeny. Toto "
+                                   "neplatí při dobírání dvou karet během první fáze tahu.")
+    paul_regret = ("Paul Regret", 3, "Má vlastně neustále ve hře fi ktivní kartuMustang. Další skutečný Mustang se "
+                                     "přičítá k fiktivnímu to znamená,že může být až o dvě místa dál než normálně.")
+    pedro_ramirez = ("Pedro Ramirez", 4, "Během první fáze svého tahu si může líznout první kartu z odhazovacího "
+                                         "balíčku (tu, která se nachází nahoře), druhou si dobere z hlavního lízacího"
+                                         " balíčku.")
+    rose_doolan = ("Rose Doolan", 4, "Má vlastně neustále ve hře fiktivní kartu Appaloosa. Další skutečná karta "
+                                     "Appaloosa se přičítá k fiktivní,to znamená že si vidí ostatní hráče až o dvě "
+                                     "místa blíže než normálně.")
+    sid_ketchum = ("Sid Ketchum", 4, "Kdykoli může odhodit jakékoliv dvě karty z ruky, aby si vrátil jeden život. "
+                                     "Tuto schopnost může použít i několikrát za sebou v jednom tahu.")
+    slab_the_killer = ("Slab the Killer", 4, "Protivníci, kteří chtějí zrušit jeho kartu BANG! musí zahrát 2 karty "
+                                             "Vedle!. Schová-li se někdo úspěšně za Barel,bere se to jako zahrána "
+                                             "karta Vedle! (je tedy nutné zahrát ještě jednu kartu Vedle!).")
+    suzy_lafayette = ("Suzy Lafayette", 4, "Kdykoli nemá žádnou kartu v ruce lízne si novou z lízacího balíčku.")
+    vulture_sam = ("Vulture Sam", 4, "Kdykoli je některý z hráčů vyřazen ze hry, Sam získá všechny jeho karty, "
+                                     "které měl v ruce i na stole.")
+    willy_the_kid = ("Willy the Kid", 4, "Může zahrát libovolný počet karet BANG! během svého tahu.")
+
+    def __init__(self):
+        characters_list = []
