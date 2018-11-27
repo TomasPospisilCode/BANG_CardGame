@@ -1,9 +1,12 @@
 # This class represents basic deck
+import copy
+from Cards_module import *
+
+
 class Deck:
     def __init__(self):
         pass
-from Cards_module import *
-import copy
+
 
 # This class represents deck of role cards
 class RoleDeck(Deck):

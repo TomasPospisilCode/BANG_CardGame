@@ -3,6 +3,7 @@
 
 import unittest
 from Game_module import Game
+from Deck_module import RoleDeck
 
 
 class TestGame(unittest.TestCase):
@@ -20,6 +21,8 @@ class TestGame(unittest.TestCase):
         self.assertRaises(ValueError, Game.__init__, self, 'blabla')
         self.assertRaises(ValueError, Game.__init__, self, None)
         self.assertRaises(ValueError, Game.__init__, self, True)
+
+
 
 
 

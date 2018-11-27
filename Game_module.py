@@ -21,10 +21,10 @@ class Game:
 
         # Add every player to player list
         for player in range(player_count):
-            current_player = Player(player + 1)
+            current_player = Player(player + 1)  # In parameters I give numbers to player, starting with one
             self.player_list.append(current_player)
 
-    # Based on player count - add correct role cards to one deck
+    # Based on player count - filter role cards to one deck
     def make_actual_role_deck(self, role_deck):
         self.current_game_role_deck = {
             4: [role_deck.list_of_roles[0], role_deck.list_of_roles[3], role_deck.list_of_roles[4],
@@ -37,9 +37,11 @@ class Game:
                 role_deck.list_of_roles[3], role_deck.list_of_roles[4], role_deck.list_of_roles[5],
                 role_deck.list_of_roles[6]]}.get(self.playerCount, "Something is wrong")
 
+    # Shows the roles in current game
     def show_roles(self):
         for card in self.current_game_role_deck: card.show()
 
+    # Deal roles to individual players
     def deal_roles(self):
         shuffle(self.current_game_role_deck)
         # Every player gets role card from randomly shuffled deck
