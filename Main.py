@@ -11,21 +11,19 @@ from Game_module import *
 
 
 def main():
-    # Initialize Role deck
-    test_deck = RoleDeck()
+    # Initialize Role and character decks
+    role_deck = RoleDeck()
+    characters_deck = CharactersDeck()
+
     # Sets game, if less or more than required count of player is set, error message is displayed
     try:
         game = Game(7)
-
     except ValueError:
-        print("Minimum player count is 4 and maximum is 7")
+        print("Blablabla")
 
-    game.make_actual_role_deck(test_deck)  # Filter role deck based on player count
+    game.make_actual_role_deck(role_deck)  # Filter role deck based on player count
     game.deal_roles()  # Deal role cards to players
-
-    # Show role of every player
-    for player in game.player_list:
-        player.show_role()
+    characters_deck.show()
 
 
 if __name__ == '__main__':

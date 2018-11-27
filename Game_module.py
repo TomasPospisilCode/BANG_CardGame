@@ -11,7 +11,7 @@ class Game:
         self.player_list = []
         self.current_game_role_deck = []
         # Entered value has to be integer
-        if type(player_count) is not type(int):
+        if type(player_count) != int:
             raise ValueError('Player count has to be integer')
         # Minimum count of player is 4 and maximum is 7, so if it's less or more, exception is thrown
         if player_count < 4 or player_count > 7:

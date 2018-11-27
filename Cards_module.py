@@ -18,3 +18,16 @@ class RoleCard(Card):
 
     def show(self):
         print("Role: {0}\nDescription: {1}\n".format(self.role, self.description))
+
+
+class CharacterCard(Card):
+
+
+    def __init__(self, name, life_count, description):
+        self.name = name
+        self.life_count = life_count
+        self.description = description
+
+
+
+

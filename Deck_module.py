@@ -40,6 +40,7 @@ class RoleDeck(Deck):
 
 
 class CharactersDeck(Deck):
+    # Stored data about characters in tuple
     bart_cassidy = ("Bart Cassidy", 4, "Ztratí-li život, lízne si kartu z balíčku")
     black_jack = ("Black Jack", 4, "Během první fáze svého tahu ukáže druhou kartu, kterou si líznul: je-li tato "
                                    "karta srdcová či kárová (červené barvy), lízne si ještě jednu kartu navíc(již "
@@ -58,12 +59,12 @@ class CharactersDeck(Deck):
                                      "výstřelu BANG!, vytáhne si náhodnou kartu z balíčku. Pokud je tato srdcová, "
                                      "střele se vyhnul a neztrácí život. Pokud má Jourddonais ve hře zahranou kartu "
                                      "Barel, může otáčet při útoku BANGem! dvě karty (Za každý barel jednu)")
-    kit_carlson = ("Kit Carlson", 4, "Během první fáze svého kola se podívá na vrchní tři karty balíčku, vybere si z "
+    kit_carlson = ("Kit Carlson", 3, "Během první fáze svého kola se podívá na vrchní tři karty balíčku, vybere si z "
                                      "nich 2, které si nechá, a třetí vrátí zpět na vrchol balíčku")
     lucky_duke = ("Lucky Duke", 4, "Vždy, když si má líznout!(např. u karet Vězení, Dynamit), otočí si vrchní 2 karty "
                                    "balíčku a vybere si, která se mu hodí. Obě karty jsou následně odhozeny. Toto "
                                    "neplatí při dobírání dvou karet během první fáze tahu.")
-    paul_regret = ("Paul Regret", 3, "Má vlastně neustále ve hře fi ktivní kartuMustang. Další skutečný Mustang se "
+    paul_regret = ("Paul Regret", 3, "Má vlastně neustále ve hře fiktivní kartu Mustang. Další skutečný Mustang se "
                                      "přičítá k fiktivnímu to znamená,že může být až o dvě místa dál než normálně.")
     pedro_ramirez = ("Pedro Ramirez", 4, "Během první fáze svého tahu si může líznout první kartu z odhazovacího "
                                          "balíčku (tu, která se nachází nahoře), druhou si dobere z hlavního lízacího"
@@ -81,5 +82,20 @@ class CharactersDeck(Deck):
                                      "které měl v ruce i na stole.")
     willy_the_kid = ("Willy the Kid", 4, "Může zahrát libovolný počet karet BANG! během svého tahu.")
 
+    # Adding characters to the list
+    characters_list = [bart_cassidy, black_jack, calamity_janet, el_gringo,
+                       jesse_jones, jourdonnais, kit_carlson, lucky_duke, paul_regret,
+                       pedro_ramirez, suzy_lafayette, vulture_sam,
+                       rose_doolan, sid_ketchum, slab_the_killer, willy_the_kid]
+
+    # List of cards of character
+    character_cards_list = []
+
     def __init__(self):
-        characters_list = []
+
+        for character in self.characters_list:
+            self.character_cards_list.append(CharacterCard(character[0],character[1], character[2]))
+
+    def show(self):
+        for card in self.character_cards_list:
+            print("Card:\nName: {}\nLifes: {}\nDescription: {}\n".format(card.name, card.life_count, card.description))
