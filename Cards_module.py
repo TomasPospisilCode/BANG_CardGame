@@ -17,7 +17,7 @@ class RoleCard(Card):
         self.description = description
 
     def show(self):
-        print("Role: {0}\nDescription: {1}\n".format(self.role, self.description))
+        print("Role: {0}\nDescription: {1}".format(self.role, self.description))
 
 
 class CharacterCard(Card):
@@ -27,6 +27,9 @@ class CharacterCard(Card):
         self.name = name
         self.life_count = life_count
         self.description = description
+
+    def show(self):
+        print("Name: {0}\nLife count {1}\nDescription {2}".format(self.name, str(self.life_count), self.description))
 
 
 

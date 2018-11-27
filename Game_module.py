@@ -49,3 +49,20 @@ class Game:
         for player in self.player_list:
             player.set_role(self.current_game_role_deck[iteration])
             iteration = iteration + 1
+
+    # Deal characters to individual players
+    def deal_characters(self, characters_deck):
+        shuffle(characters_deck.character_cards_list)
+        # Every player gets 2 character card from randomly shuffled deck
+        for player in self.player_list:
+            player.set_characters(tuple(characters_deck.character_cards_list[0:2]))
+            del characters_deck.character_cards_list[0:2]
+
+    def show_characters(self):
+        for player in self.player_list:
+            print("\nPlayer: {}".format(player.number))
+            player.get_role().show()
+            player.get_characters()[0].show()
+            player.get_characters()[1].show()
+            # print("Characters: {}\n".format())
+

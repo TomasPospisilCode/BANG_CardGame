@@ -19,11 +19,13 @@ def main():
     try:
         game = Game(7)
     except ValueError:
-        print("Blablabla")
+        print("This game can play only 4-7 players")
 
-    game.make_actual_role_deck(role_deck)  # Filter role deck based on player count
+    game.make_actual_role_deck(role_deck)  # Sets Role deck for given number of players
     game.deal_roles()  # Deal role cards to players
-    characters_deck.show()
+    game.deal_characters(characters_deck)
+    game.show_characters()
+
 
 
 if __name__ == '__main__':
