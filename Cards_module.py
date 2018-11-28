@@ -5,8 +5,8 @@ class Card:
         self.value = value
         self.suit = suit
 
-    def show(self):
-        print("{} of {}".format(self.value, self.suit))
+    def __str__(self):
+        print("This is text representation of Card class")
 
 
 # This class represents role card
@@ -16,20 +16,19 @@ class RoleCard(Card):
         self.role = role
         self.description = description
 
-    def show(self):
-        print("Role: {0}\nDescription: {1}".format(self.role, self.description))
+    def __str__(self):
+        return "Role: {0}\nDescription: {1}".format(self.role, self.description)
 
 
 class CharacterCard(Card):
-
 
     def __init__(self, name, life_count, description):
         self.name = name
         self.life_count = life_count
         self.description = description
 
-    def show(self):
-        print("Name: {0}\nLife count {1}\nDescription {2}".format(self.name, str(self.life_count), self.description))
+    def __str__(self):
+        return "Name: {}\nLife count {}\nDescription {}".format(self.name, str(self.life_count), self.description)
 
 
 

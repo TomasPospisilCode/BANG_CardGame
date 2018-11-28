@@ -23,7 +23,8 @@ class Player:
 
     def show_role(self):
         print("Hráč č.{0}".format(self.number))
-        self.role.show()
+        print(self.role)
 
     def show_characters(self):
-        self.characters.show()
+        print(self.characters[0])
+        print(self.characters[1])

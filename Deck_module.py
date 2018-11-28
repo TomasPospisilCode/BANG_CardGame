@@ -1,8 +1,8 @@
-# This class represents basic deck
 import copy
 from Cards_module import *
 
 
+# This class represents basic deck
 class Deck:
     def __init__(self):
         pass
@@ -14,7 +14,8 @@ class RoleDeck(Deck):
         self.list_of_roles = []
         for role in range(4):  # Cycle fills the deck with role cards
             # Something like switch using dictionaries. In every iteration different role is added to the deck of the
-            # role cards. At first, the information about card are saved to a list
+            # role cards.
+            # TODO - This "maybe" could be improved
             current_role = {0: ["Šerif", "Zabij všechny bandity a odpadlíka"],
                             1: ["Pomocník šerifa", "Ochraňuj šerifa, zabij všechny bandity a odpadlíka"],
                             2: ["Odpadlík", "Zůstaň poslední ve hře"],
@@ -33,14 +34,18 @@ class RoleDeck(Deck):
             else:
                 self.list_of_roles.append(current_role_card)
 
-    # Go through every card in the deck and display it individually
-    def show(self):
+    # Text representation of deck
+    def __str__(self):
+        list_for_display = []
         for card in self.list_of_roles:
-            card.show()
+            list_for_display.append(str(card))
+            final_list = '\n\n'.join(list_for_display)
+        return str(final_list)
 
 
 class CharactersDeck(Deck):
     # Stored data about characters in tuple
+    # ToDO - This could be definitely improved
     bart_cassidy = ("Bart Cassidy", 4, "Ztratí-li život, lízne si kartu z balíčku")
     black_jack = ("Black Jack", 4, "Během první fáze svého tahu ukáže druhou kartu, kterou si líznul: je-li tato "
                                    "karta srdcová či kárová (červené barvy), lízne si ještě jednu kartu navíc(již "
@@ -94,7 +99,7 @@ class CharactersDeck(Deck):
     def __init__(self):
 
         for character in self.characters_list:
-            self.character_cards_list.append(CharacterCard(character[0],character[1], character[2]))
+            self.character_cards_list.append(CharacterCard(character[0], character[1], character[2]))
 
     def show(self):
         for card in self.character_cards_list:

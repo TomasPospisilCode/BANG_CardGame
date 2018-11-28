@@ -61,8 +61,8 @@ class Game:
     def show_characters(self):
         for player in self.player_list:
             print("\nPlayer: {}".format(player.number))
-            player.get_role().show()
-            player.get_characters()[0].show()
-            player.get_characters()[1].show()
+            print(player.get_role())
+            print(player.get_characters()[0])
+            print(player.get_characters()[1])
             # print("Characters: {}\n".format())
 
