@@ -16,15 +16,13 @@ class Player:
         self.role = role
 
     def get_characters(self):
-        return self.characters
+        lst=[]
+        for character in self.characters:
+            lst.append(str(character))
+        display_lst = "\n\n".join(lst)
+
+        return display_lst
 
     def set_characters(self, characters):
         self.characters = characters
 
-    def show_role(self):
-        print("Hráč č.{0}".format(self.number))
-        print(self.role)
-
-    def show_characters(self):
-        print(self.characters[0])
-        print(self.characters[1])

@@ -19,7 +19,7 @@ class RoleCard(Card):
     def __str__(self):
         return "Role: {0}\nDescription: {1}".format(self.role, self.description)
 
-
+# This class represents character card
 class CharacterCard(Card):
 
     def __init__(self, name, life_count, description):

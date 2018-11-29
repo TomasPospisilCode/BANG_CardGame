@@ -15,18 +15,15 @@ def main():
     role_deck = RoleDeck()
     characters_deck = CharactersDeck()
 
-    print(role_deck)
-
     # Sets game, if less or more than required count of player is set, error message is displayed
-    # try:
-    #     game = Game(7)
-    # except ValueError:
-    #     print("This game can play only 4-7 players")
-    #
-    # game.make_actual_role_deck(role_deck)  # Sets Role deck for given number of players
-    # game.deal_roles()  # Deal role cards to players
-    # game.deal_characters(characters_deck)
-    # game.show_characters()
+    try:
+        game = Game(7)
+    except ValueError:
+        print("This game can play only 4-7 players")
+
+    game.make_actual_role_deck(role_deck)  # Sets Role deck for given number of players
+    game.deal_roles()  # Deal role cards to players
+    game.deal_characters(characters_deck)
 
 
 if __name__ == '__main__':

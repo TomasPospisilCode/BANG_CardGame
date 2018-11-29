@@ -42,7 +42,7 @@ class RoleDeck(Deck):
             final_list = '\n\n'.join(list_for_display)
         return str(final_list)
 
-
+# This class represents deck of character cards
 class CharactersDeck(Deck):
     # Stored data about characters in tuple
     # ToDO - This could be definitely improved
@@ -87,20 +87,24 @@ class CharactersDeck(Deck):
                                      "které měl v ruce i na stole.")
     willy_the_kid = ("Willy the Kid", 4, "Může zahrát libovolný počet karet BANG! během svého tahu.")
 
-    # Adding characters to the list
+    # Adding characters(tuples) to the list
     characters_list = [bart_cassidy, black_jack, calamity_janet, el_gringo,
                        jesse_jones, jourdonnais, kit_carlson, lucky_duke, paul_regret,
                        pedro_ramirez, suzy_lafayette, vulture_sam,
                        rose_doolan, sid_ketchum, slab_the_killer, willy_the_kid]
 
-    # List of cards of character
+    # List in which will be stored all Character cards
     character_cards_list = []
 
     def __init__(self):
-
+        # Go through list of characters tuples and create Character cards from them
+        # These cards are stored in character_cards_list
         for character in self.characters_list:
             self.character_cards_list.append(CharacterCard(character[0], character[1], character[2]))
 
-    def show(self):
+    def __str__(self):
+        lst = []
         for card in self.character_cards_list:
-            print("Card:\nName: {}\nLifes: {}\nDescription: {}\n".format(card.name, card.life_count, card.description))
+            lst.append(str(card))
+            display_lst = '\n\n'.join(lst)
+        return str(display_lst)
